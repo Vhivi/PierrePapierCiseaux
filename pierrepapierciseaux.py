@@ -23,12 +23,14 @@
 import random
 
 # Définition du dictionnaire de jeu
-jeudict = {1:"Pierre",2:"Papier",3:"Ciseaux"}
+jeudict = {1: "Pierre", 2: "Papier", 3: "Ciseaux"}
 winlist = ['Vous avez gagné !', 'Egalité', 'L\'ordinateur a gagné']
+
 
 # Fonction pour générer le jeu aléatoire de l'ordinateur
 def generation_alea_turn():
-    return random.randint(1,len(jeudict))
+    return random.randint(1, len(jeudict))
+
 
 def main():
     scoredepartuser = 0
@@ -39,13 +41,13 @@ def main():
         if scoreuser == 10 or scorepc == 10:
             print('Fin de la partie.')
             break
-        
+
         for i in jeudict.items():
             print(i)
-            
+
         userturn = int(input('Que jouez-vous ?'))
         pcturn = generation_alea_turn()
-        
+
         # Si l'utilisateur gagne
         if userturn == 1 and pcturn == 3:
             scoreuser = scoreuser + 1
