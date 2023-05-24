@@ -24,7 +24,7 @@ import random
 
 # Définition du dictionnaire de jeu
 jeudict = {1: "Pierre", 2: "Papier", 3: "Ciseaux"}
-winlist = ['Vous avez gagné !', 'Egalité', 'L\'ordinateur a gagné']
+winlist = ["Vous avez gagné !", "Egalité", "L'ordinateur a gagné"]
 
 
 # Fonction pour générer le jeu aléatoire de l'ordinateur
@@ -39,13 +39,13 @@ def main():
     scorepc = scoredepartpc
     while True:
         if scoreuser == 10 or scorepc == 10:
-            print('Fin de la partie.')
+            print("Fin de la partie.")
             break
 
         for i in jeudict.items():
             print(i)
 
-        userturn = int(input('Que jouez-vous ?'))
+        userturn = int(input("Que jouez-vous ?"))
         pcturn = generation_alea_turn()
 
         # Si l'utilisateur gagne
@@ -53,28 +53,29 @@ def main():
             scoreuser = scoreuser + 1
             scorepc = scorepc
             print(winlist[0])
-            print('Vous : {} - Ordinateur : {}'.format(scoreuser, scorepc))
+            print("Vous : {} - Ordinateur : {}".format(scoreuser, scorepc))
         elif userturn == 2 and pcturn == 1:
             scoreuser = scoreuser + 1
             scorepc = scorepc
             print(winlist[0])
-            print('Vous : {} - Ordinateur : {}'.format(scoreuser, scorepc))
+            print("Vous : {} - Ordinateur : {}".format(scoreuser, scorepc))
         elif userturn == 3 and pcturn == 2:
             scoreuser = scoreuser + 1
             scorepc = scorepc
             print(winlist[0])
-            print('Vous : {} - Ordinateur : {}'.format(scoreuser, scorepc))
+            print("Vous : {} - Ordinateur : {}".format(scoreuser, scorepc))
         # Si vous avez joué le même coup
         elif userturn == pcturn:
             scoreuser = scoreuser
             scorepc = scorepc
             print(winlist[1])
-            print('Vous : {} - Ordinateur : {}'.format(scoreuser, scorepc))
+            print("Vous : {} - Ordinateur : {}".format(scoreuser, scorepc))
         # Sinon c'est l'ordinateur qui gagne
         else:
             scoreuser = scoreuser
             scorepc = scorepc + 1
             print(winlist[2])
-            print('Vous : {} - Ordinateur : {}'.format(scoreuser, scorepc))
+            print("Vous : {} - Ordinateur : {}".format(scoreuser, scorepc))
+
 
 main()
